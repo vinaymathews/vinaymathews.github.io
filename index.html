@@ -1,61 +1,142 @@
+Yes. Here is a clean and professional `index.html` for your AJCE FDP AR demo.
+
+This version:
+
+* works with GitHub Pages,
+* supports mobile AR,
+* uses `model-viewer`,
+* has a modern appearance,
+* is simple and reliable for your FDP.
+
+Replace:
+
+```text id="xt0nup"
+house.glb
+```
+
+with your actual GLB filename if different.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChromaWeb - Your Colorful World Online</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            background-color: #4CAF50;
-            padding: 1em;
-            text-align: center;
-            color: #fff;
-        }
+  <title>AJCE FDP AR Demo</title>
 
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
+  <script type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js">
+  </script>
 
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: #4CAF50;
-            color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #222;
+      text-align: center;
+    }
+
+    header {
+      background-color: #0d47a1;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    p {
+      margin-top: 8px;
+      font-size: 1rem;
+    }
+
+    .viewer-container {
+      width: 100%;
+      height: 80vh;
+      background-color: white;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      background-color: #eaeaea;
+    }
+
+    .instructions {
+      padding: 20px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #0d47a1;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 15px;
+      background-color: #0d47a1;
+      color: white;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>ChromaWeb</h1>
-        <p>Your Colorful World Online</p>
-    </header>
+  <header>
+    <h1>AJCE FDP AR Demo</h1>
+    <p>Augmented Reality in Civil Engineering</p>
+  </header>
 
-    <main>
-        <h2>Welcome to ChromaWeb</h2>
-        <p>Experience the vibrant colors of the internet with ChromaWeb - your go-to destination for a colorful online experience.</p>
-        <p>Explore a world of creativity, inspiration, and innovation right at your fingertips.</p>
-    </main>
+  <div class="viewer-container">
 
-    <footer>
-        &copy; 2024 ChromaWeb. All rights reserved.
-    </footer>
+    <model-viewer
+      src="house.glb"
+      alt="3D AR House Model"
+
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+
+      camera-controls
+      auto-rotate
+
+      shadow-intensity="1"
+
+      exposure="1"
+
+      environment-image="neutral">
+
+    </model-viewer>
+
+  </div>
+
+  <div class="instructions">
+
+    <p>
+      Rotate and zoom the model using your fingers.
+    </p>
+
+    <p>
+      Tap the <span class="highlight">AR button</span> to place the building on your table or floor.
+    </p>
+
+    <p>
+      Join the WhatsApp interaction session and suggest colors for the building model.
+    </p>
+
+  </div>
+
+  <footer>
+    BIM → GLB → WebXR → Mobile AR
+  </footer>
 
 </body>
+
 </html>
+```
